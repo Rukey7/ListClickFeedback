@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dl7.listclickfeedback.R;
+import com.dl7.listclickfeedback.utils.ToastUtils;
 
 /**
  * Created by long on 2017/1/4.
@@ -20,7 +21,7 @@ public class ListViewAdapter extends BaseListAdapter<String> {
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
+    public View getView(final int position, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
         if (view == null) {
             view = LayoutInflater.from(mContext).inflate(R.layout.adapter_list, viewGroup, false);
@@ -35,6 +36,12 @@ public class ListViewAdapter extends BaseListAdapter<String> {
         } else {
             viewHolder.ivIcon.setImageResource(R.mipmap.ic_face_sad);
         }
+        viewHolder.tvTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtils.showToast(mDatas.get(position));
+            }
+        });
         return view;
     }
 

@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     tools:context="com.dl7.listclickfeedback.activity.ListViewActivity">
 
+    <!-- 自定义ListView的点击反馈效果 -->
     <ListView
         android:id="@+id/lv_list"
-        android:listSelector="@drawable/sel_common_bg_press"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </FrameLayout>

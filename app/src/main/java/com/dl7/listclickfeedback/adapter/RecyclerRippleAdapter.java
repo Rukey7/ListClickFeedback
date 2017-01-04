@@ -39,22 +39,22 @@ public class RecyclerRippleAdapter extends BaseRecyclerAdapter<String> {
         return viewHolder;
     }
 
-    @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        ViewHolder viewHolder = (ViewHolder) holder;
-        viewHolder.mTvTitle.setText(mDatas.get(position));
-        if (position % 2 == 0) {
-            viewHolder.mIvIcon.setImageResource(R.mipmap.ic_face_funny);
-        } else {
-            viewHolder.mIvIcon.setImageResource(R.mipmap.ic_face_sad);
-        }
-        ((ViewHolder) holder).mItemRipple.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
-            @Override
-            public void onComplete(RippleView rippleView) {
-                ToastUtils.showToast(mDatas.get(position));
-            }
-        });
+@Override
+public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
+    ViewHolder viewHolder = (ViewHolder) holder;
+    viewHolder.mTvTitle.setText(mDatas.get(position));
+    if (position % 2 == 0) {
+        viewHolder.mIvIcon.setImageResource(R.mipmap.ic_face_funny);
+    } else {
+        viewHolder.mIvIcon.setImageResource(R.mipmap.ic_face_sad);
     }
+    ((ViewHolder) holder).mItemRipple.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
+        @Override
+        public void onComplete(RippleView rippleView) {
+            ToastUtils.showToast(mDatas.get(position));
+        }
+    });
+}
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView mIvIcon;

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.dl7.listclickfeedback.activity.ListViewFullActivity">
 
+    <!-- android:drawSelectorOnTop="true"让点击反馈为Item的最顶部 -->
     <ListView
         android:id="@+id/lv_list"
         android:drawSelectorOnTop="true"
